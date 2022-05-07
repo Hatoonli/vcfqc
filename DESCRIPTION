@@ -1,0 +1,18 @@
+Package: vcfqc
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    person("Hatoon", "Al Ali", , "hatoon.ali@kaust.edu.sa", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-5303-2338"))
+Description: This package visualizes the distribution of quality annotation values in a table summary of VCFs.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+Imports: 
+    crayon,
+    data.table,
+    ggplot2
+Depends: 
+    R (>= 2.10)
+LazyData: true

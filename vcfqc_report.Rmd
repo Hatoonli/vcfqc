@@ -1,0 +1,24 @@
+---
+title: "vcfqc: A Package for Visualization of Variant Calls Quality"
+author: "Hatoon Al Ali"
+date: "4/28/2022"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##Data
+Example VCF of sample HG001 using GRCh38 human genome reference from Genome in a Bottle project.
+
+###vcf to table
+gatk VariantsToTable -V Batch1-gatk-haplotype-annotated.vcf.gz -F CHROM -F POS -F REF -F ALT -F FILTER -F QUAL -F QD -F FS -F SOR -F MQ -F MQRankSum -F ReadPosRankSum -O /home/alihh/HG001_GRCh38.table
+
+##Package
+```{r, echo=FALSE}
+valid_package_name("vcfqc")
+available_on_cran("vcfqc")
+available_on_bioc("vcfqc")
+available_on_github("vcfqc")
+```
