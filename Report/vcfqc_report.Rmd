@@ -4,7 +4,7 @@ App: vcfqc
 author: "Hatoon Al Ali  181963"
 date: "02 Apr 2022"
 output: pdf_document
-abstract: "vcfqc is a an R package that allows bioinformaticians to get an overview of the quality of a VCF file, visulaize the distribution of GATK quality annotation, and set threshhold values for filteing to count the filtered-out variants. The package can be installed from https://github.com/Hatoonli/vcfqc."
+abstract: "vcfqc is a an R package that allows bioinformaticians to get an overview of the quality of a VCF file, visulaize the distribution of GATK quality annotation, and set threshhold values for filteing to count the filtered-out variants. The package can be installed from https://hatoonli.github.io/vcfqc/"
 bibliography: References/references.bib
 biblio-style: abbrv
 geometry: margin=2cm
