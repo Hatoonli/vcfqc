@@ -4,7 +4,7 @@ App: vcfqc
 author: "Hatoon Al Ali  181963"
 date: "02 Apr 2022"
 output: pdf_document
-abstract: "vcfqc is a an R package that allows bioinformaticians to get an overview of the quality of a VCF file, visulaize the distribution of GATK quality annotation, and set threshhold values for filteing to count the filtered-out variants. The package can be installed from https://hatoonli.github.io/vcfqc/"
+abstract: "vcfqc is a an R package that allows bioinformaticians to get an overview of the quality of a VCF file, visulaize the distribution of GATK quality annotation, and set threshhold values for filteing to count the filtered-out variants. The package can be installed from https://hatoonli.github.io/vcfqc/ or from the github repository https://github.com/Hatoonli/vcfqc."
 bibliography: References/references.bib
 biblio-style: abbrv
 geometry: margin=2cm
@@ -127,7 +127,7 @@ This package was built using **devtools** [@dev]. By creating the package, all r
 usethis::create_package("vcfqc")
 ```
 
-The pacjage description is added in DESCRIPTION file. The license used is an open source licence by MIT, added using the function `use_mit_license()`.
+The package description is added in DESCRIPTION file. The license used is an open source licence by MIT, added using the function `use_mit_license()`.
 
 All **vcfqc** functions are saved in the directory `\R` and generated using the devtools command `use_r()`. Information about each function was taken from GATK hard-filtering guidelines [@de2017gatk] and added at the header of the function file (e.g. `QD.R`).
 
@@ -152,9 +152,11 @@ From this header, documentation for the function is saved in `\man` and the impo
 ggplot2::ggplot(vcf, ggplot2::aes(QD)) + ggplot2::geom_density()
 ```
 
-The user gets a message for the numbers of variants not annotated (NA) and a table output that summarizes the data. lastly, a text is printed with information about the expected plot from GTAK guidelines.
+The user gets a message for the numbers of variants not annotated (NA) and a table output that summarizes the data. Lastly, a text is printed with information about the expected plot from GTAK guidelines.
 
-Additional files needed for the package are added under the directory `/inst`, when the package is installed all child directories of `/inst` will be installed with it. Databases in this directories are documented in `/R`. Files that are not needed for the package are added to `.Rbuildignore` so they're not copied to the user system when the package is installed.
+Additional files needed for the package are added under the directory `/inst`, when the package is installed all child directories of `/inst` will be installed with it. Databases in this directories are documented in `/R`. Files that are not needed for the package are added to `.Rbuildignore` so they're not copied to the user system when the package is installed. A vignette was also created to demonstarte the purpose of the package and give background information. Using `use_vignette()` created a vignette directory with the R markdown file. Finally, a website was created feo the package using **pkgdown**. 
+
+Future updates of the package can include more annotation options and a flexible annotation field where the user can enter costum values based on the variant calling pipeline they're using.
 
 
 \newpage
