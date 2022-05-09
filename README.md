@@ -17,7 +17,7 @@ commands into R console:
 
 ``` r
 library(devtools)
-devtools::install_github("avramaral/GPcov", build_vignettes = TRUE)
+devtools::install_github("Hatoonli/vcfqc", build_vignettes = TRUE)
 ```
 
 ## Example
@@ -30,9 +30,9 @@ QD(system.file("extdata", "HG001_GRCh38.table", package = "vcfqc"))
 #> All variants are annotated with QD score
 #> 
 #>    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-#>    0.43   15.41   20.42   21.21   28.66   42.71 
+#>    0.47   15.69   20.67   21.49   28.79   42.71 
 #> 
-#> Number of variants with a QD score lower than 2: 41225
+#> Number of variants with a QD score lower than 2: 12031
 #> 
 #> Expected plot: 
 #> __________________________________________________________

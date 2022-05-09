@@ -17,3 +17,62 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(vcfqc)
 ```
+
+# Introduction
+Variant calling format (VCF) is the final file format that results from various steps of transforming sequencing data into high quality annotated genetic variants. Variants in a VCF file are prone to errors, so, different quality measurements are taken to validate the information in the file. If these measurements are not met, a further step of hard-filtering can be done to remove low quality calls. 
+Genome Analysis Toolkit (GTAK) is an established, well-documented variant calling pipeline published by the broad institute. It provides various quality annotations to detect errors in the different steps of variant calling. This package visualizes these annotations and prints out GATK guidelines on hard-filtering based on the chosen parameter.
+
+# Purpose
+This tool aims to guide the user on filtering GATK VCF files by visualizing the quality distribution of variants and providing GTAK filtering threshold values and tips.
+
+# Data
+The package functions on GATK annotated VCF files. A GATK user needs to convert the VCF into table format using the following bash command:
+
+```{bash, eval=FALSE, tidy = TRUE, size="tiny"}
+gatk VariantsToTable -V $file\
+-F CHROM -F POS -F REF -F ALT \
+-F FILTER -F QUAL -F QD -F FS \
+-F SOR -F MQ -F MQRankSum -F ReadPosRankSum\
+-O /home/alihh/freq/stat/ksu/$file.table
+```
+
+# How to use
+Install the latest version of vcfqc package by copying the following
+commands into R console:
+
+```{r, eval=FALSE, tidy = TRUE, size="tiny"}
+library(devtools)
+devtools::install_github("Hatoonli/vcfqc", build_vignettes = TRUE)
+```
+
+Load the package
+
+```{r, eval=FALSE, tidy = TRUE, size="tiny"}
+library(vcfqc)
+```
+
+Then choose a quality parameter from the list below and run it on your VCF file.
+* QD
+* FS
+* SOR
+* MQ
+* MQRankSum
+* ReadPosRankSum
+
+You can read more about each parameter by inquiring about it with a question mark, for example:
+
+```{r, eval=FALSE, tidy = TRUE, size="tiny"}
+?QC
+```
+
+You can preview the performance of the package on the example file provided in `/extdata`, to get the file pathway run the following command:
+
+```{r, eval=FALSE, tidy = TRUE, size="tiny"}
+system.file("extdata", "HG001_GRCh38.table", package = "vcfqc")
+```
+
+and to learn more about the file, read the accompanying documentation by running the following command:
+
+```{r, eval=FALSE, tidy = TRUE, size="tiny"}
+?extdata/HG001_GRCh38.table
+```
